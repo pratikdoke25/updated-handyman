@@ -7,7 +7,7 @@ import { Contact } from './Pages/Contact';
 import { Hamburger } from './Components/Hamburger';
 import { WhyUs } from './Components/WhyUs';
 import { OurWork } from './Pages/OurWork';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Navigation } from './Components/Navigation';
 import UserLogin from './Components/Auth/Login';
 import VendorLogin from './Components/Auth/VendorLogin';
@@ -18,28 +18,24 @@ import VendorDashboard from './Components/Vendor/VendorDashboard';
 import AdminDashboard from './Components/Admin/AdminDashboard';
 import AdminLogin from './Components/Admin/AdminLogin';
 
-// Example for logged-in status (replace with real auth logic)
-const isUserLoggedIn = true; // Adjust based on real user auth logic
-const isAdminLoggedIn = false; // Adjust based on real admin auth logic
-const isVendorLoggedIn = true; // Adjust based on real vendor auth logic
-
 function App() {
   return (
     <Router>
       <Routes>
         {/* Authentication Routes */}
-        <Route path="/user-login" element={!isUserLoggedIn ? <UserLogin /> : <Navigate to="/user-dashboard" />} />
-        <Route path="/vendor-login" element={!isVendorLoggedIn ? <VendorLogin /> : <Navigate to="/vendor-dashboard" />} />
-        <Route path="/admin-login" element={!isAdminLoggedIn ? <AdminLogin /> : <Navigate to="/admin-dashboard" />} />
+        <Route path="/user-login" element={<UserLogin />} />
+        <Route path="/vendor-login" element={<VendorLogin />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
 
         {/* Registration Routes */}
-        <Route path="/user-register" element={!isUserLoggedIn ? <UserRegister /> : <Navigate to="/user-dashboard" />} />
-        <Route path="/vendor-register" element={!isVendorLoggedIn ? <VendorRegister /> : <Navigate to="/vendor-dashboard" />} />
+        <Route path="/user-register" element={<UserRegister />} />
+        <Route path="/vendor-register" element={<VendorRegister />} />
 
         {/* Dashboard Routes */}
-        <Route path="/user-dashboard" element={isUserLoggedIn ? <UserDashboard /> : <Navigate to="/user-login" />} />
-        <Route path="/admin-dashboard" element={isAdminLoggedIn ? <AdminDashboard /> : <Navigate to="/admin-login" />} />
-        <Route path="/vendor-dashboard" element={isVendorLoggedIn ? <VendorDashboard /> : <Navigate to="/vendor-login" />} />
+        <Route path="/user-dashboard" element={<UserDashboard />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/vendor-dashboard" element={<VendorDashboard />} />
+
         {/* Main Pages */}
         <Route path="/" element={
           <div className='background-wrapper'>
