@@ -1,17 +1,18 @@
 import React from 'react';
 import logo from '../Assets/logo-gial.png';
 import '../Styling/Navigation.css';
-import { Link } from 'react-router-dom';  // Import Link for navigation between pages
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';  // Import HashLink
 
 export const Navigation = () => {
   return (
     <nav className="nav-desktop">
       <ul>
-        {/* Replaced href with Link */}
-        <li><Link to="#home">HOME</Link></li>
-        <li><Link to="#services">SERVICES</Link></li>
-        <li><Link to="#gallery">GALLERY</Link></li>
-        <li><Link to="#contact" className="contact-nav">CONTACT</Link></li>
+        {/* Replaced href with HashLink */}
+        <li><HashLink to="#home">HOME</HashLink></li>
+        <li><HashLink to="#services">SERVICES</HashLink></li>
+        <li><HashLink to="#gallery">GALLERY</HashLink></li>
+        <li><HashLink to="#contact" className="contact-nav">CONTACT</HashLink></li>
 
         {/* Login and Register Dropdowns */}
         <li className="dropdown">

@@ -17,7 +17,7 @@ import UserDashboard from './Components/User/UserDashboard';
 import VendorDashboard from './Components/Vendor/VendorDashboard';
 import AdminDashboard from './Components/Admin/AdminDashboard';
 import AdminLogin from './Components/Admin/AdminLogin';
-import BusinessLeadsScraper from './Components/Vendor/BusinessLeadsScraper'
+
 // Example for logged-in status (replace with real auth logic)
 const isUserLoggedIn = true; // Adjust based on real user auth logic
 const isAdminLoggedIn = false; // Adjust based on real admin auth logic
@@ -40,7 +40,6 @@ function App() {
         <Route path="/user-dashboard" element={isUserLoggedIn ? <UserDashboard /> : <Navigate to="/user-login" />} />
         <Route path="/admin-dashboard" element={isAdminLoggedIn ? <AdminDashboard /> : <Navigate to="/admin-login" />} />
         <Route path="/vendor-dashboard" element={isVendorLoggedIn ? <VendorDashboard /> : <Navigate to="/vendor-login" />} />
-    <Route path="/business-lead" element={<BusinessLeadsScraper />} />
         {/* Main Pages */}
         <Route path="/" element={
           <div className='background-wrapper'>

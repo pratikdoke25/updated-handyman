@@ -1,42 +1,51 @@
+/* Basic Styling for Navigation */
 nav {
   display: flex;
   position: fixed;
   align-items: center;
-  justify-content: space-around;
-  padding: 1rem 0;
+  justify-content: center; /* Center the navbar */
+  padding: 1rem 2rem;
   margin-top: 3rem;
   color: white;
   z-index: 2;
-  /* Removed transition */
+  width: 100%;
 }
 
+/* Styling for the Desktop Nav */
 .nav-desktop {
   position: fixed;
-  width: 90%;
+  top: 0;
+  width: 90%; /* Limit width to center */
+  max-width: 1200px; /* Optional: Set a max-width for large screens */
   z-index: 999;
-}
-.nav-desktop.scrolled {
-  background-color: white; /* Change to white or any other color when scrolled */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visibility */
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
 }
 
+.nav-desktop.scrolled {
+  background-color: white; /* When scrolled */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
+}
+
+/* Hide Hamburger Menu on Desktop */
 .hamburger-menu {
   display: none;
 }
 
+/* Styling for Hamburger Menu on Mobile */
 .hambruger-content-wrapper {
-  height: 100dvh;
+  display: none;
+  height: 100vh;
 }
 
 .contact-nav {
   background-color: #e09f3e;
   padding: .5rem 1.5rem;
   border-radius: 10px;
-  /* Removed transition */
-}
-
-.contact-nav::after {
-  background-color: transparent;
 }
 
 .contact-nav:hover {
@@ -50,10 +59,15 @@ header img {
 
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 ul a {
-  color: white;
+margin-left: 50px;
+  text-decoration: none;
 }
 
 ul li {
@@ -82,11 +96,7 @@ ul li:hover::after {
   opacity: 1;
 }
 
-ul li a {
-  text-decoration: none;
-  
-}
-
+/* Styling for CTA (Call to Action) */
 .cta .cta-text {
   display: flex;
   align-items: center;
@@ -97,6 +107,7 @@ ul li a {
   color: white;
 }
 
+/* Close Button for Overlay */
 .exit-icon {
   position: absolute;
   top: 10px;
@@ -107,23 +118,14 @@ ul li a {
   width: 25px;
 }
 
-.nav-desktop ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.nav-desktop ul li {
-  position: relative;
-}
-
+/* Dropdown Menu */
 .nav-desktop .dropdown {
   position: relative;
 }
 
 .nav-desktop .dropbtn {
   cursor: pointer;
+  padding: 10px;
 }
 
 .nav-desktop .dropdown-content {
@@ -131,7 +133,7 @@ ul li a {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -150,86 +152,54 @@ ul li a {
   display: block;
 }
 
-/* Basic styling for the navigation bar */
-.nav-desktop {
-  /* Your existing styles */
+/* Mobile Navigation Styling */
+@media screen and (max-width: 768px) {
+  .nav-desktop ul {
+    display: none; /* Hide menu items */
+  }
+
+  .hamburger-menu {
+    display: block; /* Show hamburger icon */
+  }
+
+  .hambruger-content-wrapper {
+    display: block; /* Show hamburger menu content when clicked */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    z-index: 1000;
+  }
+
+  .hambruger-content-wrapper ul {
+    display: block;
+    text-align: center;
+  }
+
+  .hambruger-content-wrapper ul li {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+  }
 }
 
+/* Contact Nav Phone Number Styling */
+.contact-nav a {
+  font-size: 14px;
+}
+
+/* Styling for Sticky Nav */
 .sticky-nav {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   background-color: white;
-  /* Removed transition */
 }
 
-ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-}
-
-li {
-  margin: 10px 20px;
-}
-
-li a {
-  text-decoration: none;
-  color: black;
-}
-
-/* Styling for the dropdown */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  z-index: 1;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropbtn {
-  cursor: pointer;
-}
-
-/* Styling for phone number */
-.contact-nav a {
-  font-size: 14px;
-}
-/* Example dropdown CSS */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropbtn {
-  cursor: pointer;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
+/* Prevent unwanted overflow */
+body {
+  margin: 0;
+  padding: 0;
 }

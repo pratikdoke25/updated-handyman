@@ -7,7 +7,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 const BusinessLeadsScraper = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [scrapingResult, setScrapingResult] = useState(null); // To store the result of the scraping
-  const navigate = useNavigate();
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -2,62 +2,61 @@ import React, { useEffect, useState } from 'react';
 import UserFormPage from './UserFormPage'; // Corrected import
 import './UserDashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEdit, faList, faEnvelope, faPhone, faLock, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEdit, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [userForms, setUserForms] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const userId = localStorage.getItem('userId');
-    const email = localStorage.getItem('userEmail');
-
-    if (userId && email) {
-      const fetchUserData = async () => {
-        try {
-          const response = await fetch(`http://localhost:5000/api/users/${userId}`);
-          if (response.ok) {
-            const userData = await response.json();
-            setUser(userData.data);
-            setLoading(false);
-          } else {
-            setLoading(false);
-          }
-        } catch (error) {
-          setLoading(false);
-        }
-      };
-
-      const fetchUserForms = async () => {
-        try {
-          const response = await fetch(`http://localhost:5000/api/forms/email/${email}`);
-          if (response.ok) {
-            const formsData = await response.json();
-            setUserForms(formsData);
-          }
-        } catch (error) {
-          setError('Error fetching user forms');
-        }
-      };
-
-      fetchUserData();
-      fetchUserForms();
-    } else {
+    const userId = localStorage.getItem('userId'); // Get userId from localStorage
+    const email = localStorage.getItem('userEmail'); // Get email from localStorage
+    
+    // Check if userId and email exist in localStorage
+    if (!userId || !email) {
       setLoading(false);
       setError('User ID or email not found in local storage');
+      return;
     }
-  }, []);
+
+    // Fetch user data using userId
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/users/${userId}`);
+        if (response.ok) {
+          const userData = await response.json();
+          if (userData.data) {
+            setUser(userData.data); // Store the fetched user data
+            localStorage.setItem('user', JSON.stringify(userData.data)); // Update localStorage with user data
+          } else {
+            setError('User data not found');
+          }
+        } else {
+          setError('Error fetching user data');
+        }
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        setError('Error fetching user data');
+      }
+    };
+
+    fetchUserData(); // Fetch user data
+  }, []); // This will run once on mount
 
   const handleUserUpdate = (updatedInfo) => {
     const updatedUser = { ...user, ...updatedInfo };
     setUser(updatedUser);
-    localStorage.setItem('user', JSON.stringify(updatedUser));
+    localStorage.setItem('user', JSON.stringify(updatedUser)); // Update user data in localStorage
   };
 
   if (loading) {
     return <p>Loading user information...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
   }
 
   if (!user) {
@@ -76,25 +75,7 @@ const UserDashboard = () => {
           <h3>{user.name || 'User Name Not Available'}</h3>
           <p><FontAwesomeIcon icon={faEnvelope} /> Email: {user.email || 'Email Not Available'}</p>
           <p><FontAwesomeIcon icon={faPhone} /> Mobile: {user.mobile || 'Phone Number Not Available'}</p>
-          {user.role && <p><FontAwesomeIcon icon={faList} /> Role: {user.role}</p>}
         </div>
-      </div>
-
-      <div className="user-forms">
-        <h3>Submitted Forms <FontAwesomeIcon icon={faEdit} /></h3>
-        {userForms.length > 0 ? (
-          <ul>
-            {userForms.map((form) => (
-              <li key={form._id} className="form-item">
-                <p><strong>Query:</strong> {form.query}</p>
-                <p><strong>Submitted At:</strong> {new Date(form.submittedAt).toLocaleString()}</p>
-                <p><strong>Status:</strong> {form.status}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No forms submitted yet.</p>
-        )}
       </div>
 
       <UserFormPage user={user} onUpdate={handleUserUpdate} />

@@ -67,7 +67,7 @@ const VendorDashboard = () => {
   }, [vendorToken, roleFromURL]);
 
   const handleScrape = () => {
-    navigate('/business-lead');  // Corrected the route spelling
+    navigate('/scraper');  // Corrected the route spelling
   };
   
   const handleStatusChange = async (id) => {
