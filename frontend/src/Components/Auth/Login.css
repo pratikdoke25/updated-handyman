@@ -1,0 +1,98 @@
+/* Layout and Background */
+.min-height-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bg-gradient {
+    background: linear-gradient(to bottom right, #ebf8ff, #f0f0ff, #f4ebff);
+  }
+  
+  .login-container {
+    width: 100%;
+    max-width: 28rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  /* Title and Subtitle */
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .subtitle {
+    color: #718096;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .auth-links {
+    text-align: center;
+  }
+  
+  /* Form Fields */
+  .form {
+    margin-top: 1.5rem;
+    text-align: left;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    transition: border-color 0.2s;
+  }
+  
+  .input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+    border-color: #3182ce;
+  }
+  
+  /* Password Container for toggle visibility */
+  .password-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #718096;
+    font-size: 1.25rem;
+  }
+  
+  /* Submit Button */
+  .submit-button {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(to right, #3182ce, #667eea);
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 1rem;
+  }
+  
+  .submit-button:hover {
+    background: #3182ce;
+  }
+  .title {
+    color: #007bff; /* You can use any shade of blue */
+  }
+  

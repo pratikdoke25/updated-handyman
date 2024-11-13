@@ -1,0 +1,75 @@
+.user-form-page {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 25px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.user-form-page h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #333;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 8px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Styles for dropdown */
+.form-group select {
+  background-color: #f9f9f9;
+  color: #333;
+  appearance: none;
+  padding-right: 25px;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDEwIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8cGF0aCBkPSJNNSA1LjEyNmMtLjE2MiAwLS4zMTMtLjA1NS0uNDMyLS4xNTZMLjE2MSAxLjczNUEuNjM5LjYzOSAwIDAgMSAuMTYgLjI2Mi4yNC4yNCAwIDAgMSAuNjI2IDBsNC4zMjUgMy4yNjdBLjY0LjY0IDAgMCAxIDUgNS4xMjZaIiBmaWxsPSIjNjY2Ii8+Cjwvc3ZnPgo=');
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+}

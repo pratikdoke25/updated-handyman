@@ -1,0 +1,235 @@
+nav {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  color: white;
+  z-index: 2;
+  /* Removed transition */
+}
+
+.nav-desktop {
+  position: fixed;
+  width: 90%;
+  z-index: 999;
+}
+.nav-desktop.scrolled {
+  background-color: white; /* Change to white or any other color when scrolled */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visibility */
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.hambruger-content-wrapper {
+  height: 100dvh;
+}
+
+.contact-nav {
+  background-color: #e09f3e;
+  padding: .5rem 1.5rem;
+  border-radius: 10px;
+  /* Removed transition */
+}
+
+.contact-nav::after {
+  background-color: transparent;
+}
+
+.contact-nav:hover {
+  background-color: #f8c06b;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+header img {
+  height: 100px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul a {
+  color: white;
+}
+
+ul li {
+  display: inline-block;
+  margin-right: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  padding: .25rem 0;
+  font-size: 1.3rem;
+}
+
+ul li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: rgb(255, 230, 230);
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+ul li:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+
+ul li a {
+  text-decoration: none;
+  
+}
+
+.cta .cta-text {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.exit-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  z-index: 999;
+  height: 25px;
+  width: 25px;
+}
+
+.nav-desktop ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-desktop ul li {
+  position: relative;
+}
+
+.nav-desktop .dropdown {
+  position: relative;
+}
+
+.nav-desktop .dropbtn {
+  cursor: pointer;
+}
+
+.nav-desktop .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.nav-desktop .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.nav-desktop .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.nav-desktop .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Basic styling for the navigation bar */
+.nav-desktop {
+  /* Your existing styles */
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  /* Removed transition */
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  margin: 10px 20px;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Styling for the dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  z-index: 1;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropbtn {
+  cursor: pointer;
+}
+
+/* Styling for phone number */
+.contact-nav a {
+  font-size: 14px;
+}
+/* Example dropdown CSS */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropbtn {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+}

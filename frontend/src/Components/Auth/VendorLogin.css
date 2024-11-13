@@ -1,0 +1,218 @@
+/* Animations */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* General Styling */
+.vendor-login-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #ebf8ff, #f0f0ff, #f4ebff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.vendor-login-card {
+  width: 100%;
+  max-width: 28rem; /* Equivalent to max-w-md in Tailwind */
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 0.75rem;
+  transition: transform 0.3s ease;
+  border: 1px solid #f7fafc;
+}
+
+.vendor-login-card:hover {
+  transform: scale(1.01);
+}
+
+.vendor-login-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.vendor-login-header h1 {
+  font-size: 1.875rem; /* Equivalent to text-3xl */
+  font-weight: 700;
+  background: linear-gradient(to right, #3182ce, #667eea);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.vendor-login-header p {
+  color: #a0aec0; /* Equivalent to text-gray-500 */
+}
+
+/* Alert Messages */
+.alert {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.alert-error {
+  background-color: #fed7d7; /* bg-red-50 */
+  color: #e53e3e; /* text-red-600 */
+  animation: shake 0.5s ease-in-out;
+}
+
+.alert-success {
+  background-color: #e6fffa; /* bg-green-50 */
+  color: #2f855a; /* text-green-600 */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.alert .icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Form Styles */
+.vendor-login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-container {
+  position: relative;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0; /* border-gray-200 */
+  border-radius: 0.5rem;
+  background-color: #f7fafc; /* bg-gray-100 */
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #3182ce; /* border-blue-500 */
+  outline: none;
+}
+
+.input-error {
+  border-color: #e53e3e; /* border-red-600 */
+}
+
+/* Password Field */
+.password-field {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;  /* Position it inside the input field */
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #a0aec0; /* text-gray-500 */
+  z-index: 1; /* Ensure it appears above the input field */
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #3182ce; /* bg-blue-500 */
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button:disabled {
+  background-color: #b0e0f0; /* bg-blue-300 */
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #2b6cb0; /* bg-blue-600 */
+}
+
+.submit-button .loader {
+  margin-right: 0.5rem;
+}
+
+/* Footer Links */
+.footer-links {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.footer-links p {
+  font-size: 0.875rem; /* text-sm */
+  color: #3182ce; /* text-blue-500 */
+}
+
+/* Floating shapes */
+.floating-shapes {
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.floating-shape {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: blob 7s infinite;
+}
+
+.shape-1 {
+  top: 10%;
+  left: 10%;
+}
+
+.shape-2 {
+  top: 30%;
+  left: 40%;
+}
+
+.shape-3 {
+  top: 60%;
+  left: 70%;
+}
